@@ -1,4 +1,4 @@
-module github.com/plantoncloud/eks-cluster-pulumi-module
+module github.com/plantoncloud/aws-secrets-manager-secret-set-pulumi-module
 
 go 1.22
 
