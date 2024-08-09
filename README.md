@@ -1,2 +1,2 @@
-# aws-secrets-manager-secret-set-pulumi-module
+# aws-secret-set-pulumi-module
 
