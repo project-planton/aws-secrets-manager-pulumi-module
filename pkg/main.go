@@ -2,13 +2,13 @@ package pkg
 
 import (
 	"github.com/pkg/errors"
-	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/aws/awssecretset/model"
+	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/aws/awssecretsmanager"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/aws/pulumiawsprovider"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type ResourceStack struct {
-	Input  *model.AwsSecretSetStackInput
+	Input  *awssecretsmanager.AwsSecretsManagerStackInput
 	Labels map[string]string
 }
 
