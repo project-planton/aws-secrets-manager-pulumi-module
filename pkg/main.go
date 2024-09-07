@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/pkg/errors"
 	"github.com/plantoncloud/planton-cloud-apis/zzgo/cloud/planton/apis/code2cloud/v1/aws/awssecretsmanager"
-	"github.com/pulumi/pulumi-aws-native/sdk/go/aws"
+	"github.com/pulumi/pulumi-aws/sdk/v6/go/aws"
 	"github.com/pulumi/pulumi-aws/sdk/v6/go/aws/secretsmanager"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -24,7 +24,7 @@ func (s *ResourceStack) Resources(ctx *pulumi.Context) error {
 
 	//create aws provider using the credentials from the input
 	awsProvider, err := aws.NewProvider(ctx,
-		"aws-native",
+		"aws-classic",
 		&aws.ProviderArgs{
 			AccessKey: pulumi.String(awsCredential.Spec.AccessKeyId),
 			SecretKey: pulumi.String(awsCredential.Spec.SecretAccessKey),
