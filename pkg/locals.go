@@ -15,7 +15,7 @@ type Locals struct {
 
 func initializeLocals(ctx *pulumi.Context, stackInput *awssecretsmanager.AwsSecretsManagerStackInput) *Locals {
 	locals := &Locals{}
-	locals.AwsSecretsManager = stackInput.ApiResource
+	locals.AwsSecretsManager = stackInput.Target
 
 	locals.AwsTags = map[string]string{
 		awstagkeys.Resource:     strconv.FormatBool(true),
