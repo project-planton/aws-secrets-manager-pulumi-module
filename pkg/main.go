@@ -3,7 +3,7 @@ package pkg
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/plantoncloud/planton/apis/zzgo/cloud/planton/apis/code2cloud/v1/aws/awssecretsmanager"
+	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/code2cloud/v1/aws/awssecretsmanager"
 	"github.com/pulumi/pulumi-aws/sdk/v6/go/aws"
 	"github.com/pulumi/pulumi-aws/sdk/v6/go/aws/secretsmanager"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
