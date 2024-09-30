@@ -1,19 +1,18 @@
 package pkg
 
 import (
-	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/code2cloud/v1/aws/awssecretsmanager"
-	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/commons/apiresource/enums/apiresourcekind"
+	awssecretsmanagerv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/aws/awssecretsmanager/v1"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/aws/awstagkeys"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"strconv"
 )
 
 type Locals struct {
-	AwsSecretsManager *awssecretsmanager.AwsSecretsManager
+	AwsSecretsManager *awssecretsmanagerv1.AwsSecretsManager
 	AwsTags           map[string]string
 }
 
-func initializeLocals(ctx *pulumi.Context, stackInput *awssecretsmanager.AwsSecretsManagerStackInput) *Locals {
+func initializeLocals(ctx *pulumi.Context, stackInput *awssecretsmanagerv1.AwsSecretsManagerStackInput) *Locals {
 	locals := &Locals{}
 	locals.AwsSecretsManager = stackInput.Target
 
@@ -21,7 +20,7 @@ func initializeLocals(ctx *pulumi.Context, stackInput *awssecretsmanager.AwsSecr
 		awstagkeys.Resource:     strconv.FormatBool(true),
 		awstagkeys.Organization: locals.AwsSecretsManager.Spec.EnvironmentInfo.OrgId,
 		awstagkeys.Environment:  locals.AwsSecretsManager.Spec.EnvironmentInfo.EnvId,
-		awstagkeys.ResourceKind: apiresourcekind.ApiResourceKind_aws_secrets_manager.String(),
+		awstagkeys.ResourceKind: "aws-secrets-manager",
 		awstagkeys.ResourceId:   locals.AwsSecretsManager.Metadata.Id,
 	}
 	return locals

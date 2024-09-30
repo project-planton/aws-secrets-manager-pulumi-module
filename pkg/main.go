@@ -1,9 +1,9 @@
 package pkg
 
 import (
+	awssecretsmanagerv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/aws/awssecretsmanager/v1"
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/plantoncloud/project-planton/apis/zzgo/cloud/planton/apis/code2cloud/v1/aws/awssecretsmanager"
 	"github.com/pulumi/pulumi-aws/sdk/v6/go/aws"
 	"github.com/pulumi/pulumi-aws/sdk/v6/go/aws/secretsmanager"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
@@ -13,7 +13,7 @@ const (
 	PlaceholderSecretValue = "placeholder"
 )
 
-func Resources(ctx *pulumi.Context, stackInput *awssecretsmanager.AwsSecretsManagerStackInput) error {
+func Resources(ctx *pulumi.Context, stackInput *awssecretsmanagerv1.AwsSecretsManagerStackInput) error {
 	locals := initializeLocals(ctx, stackInput)
 
 	awsCredential := stackInput.AwsCredential
