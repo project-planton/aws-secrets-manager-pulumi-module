@@ -1,7 +1,7 @@
 package pkg
 
 import (
-	awssecretsmanagerv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/aws/awssecretsmanager/v1"
+	awssecretsmanagerv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/provider/aws/awssecretsmanager/v1"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/provider/aws/awstagkeys"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"strconv"

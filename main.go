@@ -1,7 +1,7 @@
 package main
 
 import (
-	awssecretsmanagerv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/apis/provider/aws/awssecretsmanager/v1"
+	awssecretsmanagerv1 "buf.build/gen/go/plantoncloud/project-planton/protocolbuffers/go/project/planton/provider/aws/awssecretsmanager/v1"
 	"github.com/pkg/errors"
 	"github.com/plantoncloud/aws-secrets-manager-pulumi-module/pkg"
 	"github.com/plantoncloud/pulumi-module-golang-commons/pkg/stackinput"
