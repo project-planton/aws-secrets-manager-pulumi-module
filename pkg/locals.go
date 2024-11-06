@@ -18,8 +18,8 @@ func initializeLocals(ctx *pulumi.Context, stackInput *awssecretsmanagerv1.AwsSe
 
 	locals.AwsTags = map[string]string{
 		awstagkeys.Resource:     strconv.FormatBool(true),
-		awstagkeys.Organization: locals.AwsSecretsManager.Spec.EnvironmentInfo.OrgId,
-		awstagkeys.Environment:  locals.AwsSecretsManager.Spec.EnvironmentInfo.EnvId,
+		awstagkeys.Organization: locals.AwsSecretsManager.Metadata.Org,
+		awstagkeys.Environment:  locals.AwsSecretsManager.Metadata.Env.Id,
 		awstagkeys.ResourceKind: "aws-secrets-manager",
 		awstagkeys.ResourceId:   locals.AwsSecretsManager.Metadata.Id,
 	}
